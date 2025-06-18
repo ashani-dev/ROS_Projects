@@ -1,0 +1,37 @@
+To Run Ros Demo nodes, 
+1. Open two Terminals. 
+in one run the following,
+
+source /opt/ros/rolling/setup.bash # assuming you have installed ros rolling flavor.
+ros2 run demo_nodes_cpp talker
+
+In another, 
+
+source /opt/ros/rolling/setup.bash # assuming you have installed ros rolling flavor.
+ros2 run demo_nodes_cpp listener
+
+Run Gazebo sims
+
+gz sim /home/as/Content/EmptyWorld.sdf
+
+
+build a package from source in ROS
+source /opt/ros/rolling/setup.bash # source your aments
+colcon build
+
+remove all generated files and clean the build 
+rm -rf ./build/ ./install/ ./log/
+
+source your built packages
+source install/setup.bash
+
+
+check for correctly built packages
+ros2 pkg list | grep rbot_control
+ros2 pkg list | grep rbot_description
+
+run the robot file:
+ros2 launch rbot_description spawn_rbot.launch.py
+
+run the python packages:
+ros2 run rbot_control joint_listener
