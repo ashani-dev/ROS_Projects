@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 4.4.3 commit date:2025-04-29, commit time:14:09, hash:802179c51ccc</authoring_tool>
+    </contributor>
+    <created>2025-06-19T23:33:59</created>
+    <modified>2025-06-19T23:33:59</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="color_40919-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0 0.6235294 0.8431373 1</color>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.5</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images/>
+  <library_materials>
+    <material id="color_40919-material" name="color_40919">
+      <instance_effect url="#color_40919-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="obj_0_012-mesh" name="obj_0.012">
+      <mesh>
+        <source id="obj_0_012-mesh-positions">
+          <float_array id="obj_0_012-mesh-positions-array" count="24">-49 -95 50 -49 -95 25 -49 -15 25 -49 -15 50 -129 -15 50 -129 -15 25 -129 -95 25 -129 -95 50</float_array>
+          <technique_common>
+            <accessor source="#obj_0_012-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="obj_0_012-mesh-normals">
+          <float_array id="obj_0_012-mesh-normals-array" count="36">1 0 0 1 0 0 -1 0 0 -1 0 0 0 0 1 0 0 1 0 0 -1 0 0 -1 0 1 0 0 1 0 0 -1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#obj_0_012-mesh-normals-array" count="12" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="obj_0_012-mesh-vertices">
+          <input semantic="POSITION" source="#obj_0_012-mesh-positions"/>
+        </vertices>
+        <triangles material="color_40919-material" count="12">
+          <input semantic="VERTEX" source="#obj_0_012-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#obj_0_012-mesh-normals" offset="1"/>
+          <p>0 0 1 0 2 0 0 1 2 1 3 1 4 2 5 2 6 2 4 3 6 3 7 3 3 4 4 4 7 4 3 5 7 5 0 5 1 6 6 6 5 6 1 7 5 7 2 7 3 8 2 8 5 8 3 9 5 9 4 9 7 10 6 10 1 10 7 11 1 11 0 11</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="obj_0_012" name="obj_0.012" type="NODE">
+        <matrix sid="transform">-4.37113e-10 -0.00999999 1.74845e-9 -0.8416667 0.00999999 -4.37113e-10 0 0.7725126 0 1.74845e-9 0.00999999 0.1668318 0 0 0 1</matrix>
+        <instance_geometry url="#obj_0_012-mesh" name="obj_0.012">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="color_40919-material" target="#color_40919-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>
